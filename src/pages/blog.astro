@@ -2,6 +2,8 @@
 ---
 import '../styles/global.css'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import BlogPost from '../layouts/BlogPost.astro'
+const allPosts = await Astro.glob('./posts/*.md')
 const pageTitle = "Blog";
 ---
 
@@ -12,8 +14,6 @@ const pageTitle = "Blog";
 <p>i am working on deez nuts this is the seoncdjfisj</p>
 <p>this wuhjfdifjidbisfisighfdogjidfs </p>
 <ul>
-    <li><a href="/astroTut/posts/post-1">post 1</a> </li>
-    <li><a href="/astroTut/posts/post-2">post 2</a> </li>
-    <li><a href="/astroTut/posts/post-3">post 3</a> </li>
+    {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
 </ul>
 </BaseLayout>
