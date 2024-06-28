@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 const pageTitle = "Home Page"
 ---
@@ -11,10 +13,12 @@ const pageTitle = "Home Page"
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<a href="/astroTut/">Home</a>
-	<a href="/astroTut/about">abot</a>
-	<a href="/astroTut/blog">blog</a>
 	<body>
+		<Header/>
 		<h1>fin got no nuts haha</h1>
+		<Footer/>
+	<script>
+		import "../scripts/menu.js"
+	</script>
 	</body>
 </html>
